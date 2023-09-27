@@ -1,17 +1,11 @@
-# Async intro and Npm Review
+export const data = `
+# Npm Review
 
-## Async Intro and Fetch
+## Import and export modules
 
-Using fetch to get data from an API is a common way to handle asynchronous operations in modern web development. The fetch API returns Promises, which represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+**data.js**
 
-**Handshake between the client and the resource where the resource give the data to the client (API)**
-![](https://cdn2.hubspot.net/hubfs/53/Untitled%20design-14.png)
-
-**Example: Fetching blog data from markdown file**
-
-**data.md**
-
-```html
+\`\`\`html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,26 +35,18 @@ Using fetch to get data from an API is a common way to handle asynchronous opera
     <script src="./main.js"></script>
   </body>
 </html>
-```
+\`\`\`
 
-```js
+\`\`\`js
+import { data } from "./data.js";
 const root = document.querySelector("#root");
 
 window.addEventListener("DOMContentLoaded", () => {
-  // source of data (file or endpoint)
-  fetch("data.md")
-    // wait for response and convert to text and pass it to the next stage
-    .then((res) => res.text())
-    // wait for data in text format
-    .then((data) => {
       // render data to the DOM
-      root.innerHTML = `<pre>${data}</pre>`;
-      console.log(data);
-    });
+      root.innerHTML = \`<pre>\${data}</pre>\`;
+      console.log(data); 
 });
-```
-
-![fetch](https://www.atatus.com/blog/content/images/2022/07/fetch---2.png)
+\`\`\`
 
 I wanted the tiger but to got a dog
 
@@ -78,19 +64,20 @@ Make the convert markdown to HTML with [markdown](https://www.npmjs.com/package/
 
 update html file
 
-```html
+
+\`\`\`html
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-```
+\`\`\`
 
 update js file
 
-```js
+\`\`\`js
 root.innerHTML = marked.parse(data);
-```
+\`\`\`
 
 Make the content more fancy with copy button and more styles + use [highlight.js](https://github.com/highlightjs/highlight.js) library
 
-```html
+\`\`\`html
 <style>
   * {
     box-sizing: border-box;
@@ -134,15 +121,16 @@ Make the content more fancy with copy button and more styles + use [highlight.js
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css"
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-```
+\`\`\`
 
-```js
+
+\`\`\`js
+import { data } from "./data.js";
+
 const root = document.querySelector("#root");
 
 window.addEventListener("DOMContentLoaded", () => {
-  fetch("data.md")
-    .then((res) => res.text())
-    .then((data) => {
+
       root.innerHTML = marked.parse(data);
       hljs.highlightAll();
 
@@ -164,13 +152,14 @@ window.addEventListener("DOMContentLoaded", () => {
         block.parentNode.insertBefore(copyBtn, block);
         console.log(copyBtn);
       });
-    });
+
 });
-```
+\`\`\`
 
 _Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/), [tailwindcss-typography](https://cdn.tailwindcss.com?plugins=typography), [Inter font](https://fonts.google.com/specimen/Inter)_
 
-```html
+
+\`\`\`html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -237,4 +226,7 @@ _Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/), [t
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   </body>
 </html>
-```
+\`\`\`
+
+
+`;
