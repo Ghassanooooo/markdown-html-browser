@@ -2,7 +2,7 @@ const root = document.querySelector("#root");
 const download = document.querySelector(".download");
 
 function onDownload(filename, text) {
-  var element = document.createElement("a");
+  let element = document.createElement("a");
   element.setAttribute(
     "href",
     "data:text/plain;charset=utf-8," + encodeURIComponent(text)
