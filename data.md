@@ -168,7 +168,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-_Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/) and [tailwindcss-typography](https://cdn.tailwindcss.com?plugins=typography)_
+_Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/), [tailwindcss-typography](https://cdn.tailwindcss.com?plugins=typography), [Inter font](https://fonts.google.com/specimen/Inter)_
 
 ```html
 <!DOCTYPE html>
@@ -181,8 +181,16 @@ _Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/) and
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
       h1 {
         padding-top: 20px;
       }
