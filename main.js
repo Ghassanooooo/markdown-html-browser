@@ -1,28 +1,14 @@
 import { data } from "./data.js";
+import downloadFile from "./lib/download.js";
+import "./lib/marked.js";
 
 const root = document.querySelector("#root");
 const download = document.querySelector(".download");
 
-function onDownload(filename, text) {
-  let element = document.createElement("a");
-  element.setAttribute(
-    "href",
-    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
-  );
-  element.setAttribute("download", filename);
-
-  element.style.display = "none";
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-}
-
 window.addEventListener("DOMContentLoaded", () => {
   console.log(data);
   download.addEventListener("click", () => {
-    onDownload("doc.md", data);
+    downloadFile("doc.md", data);
     download.style.transform = "scale(0.94)";
     download.innerHTML = "Downloaded!";
     setTimeout(() => {
