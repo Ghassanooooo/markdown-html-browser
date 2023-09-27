@@ -24,10 +24,10 @@ window.addEventListener("DOMContentLoaded", () => {
       download.addEventListener("click", () => {
         onDownload("doc.md", data);
         download.style.transform = "scale(0.94)";
-        download.innerText = "Downloaded!";
+        download.innerHTML = "Downloaded!";
         setTimeout(() => {
           download.style.transform = "scale(1)";
-          download.innerText = "Download";
+          download.innerHTML = ' <i class="fa-solid fa-download"></i> Download';
         }, 1000);
       });
       root.innerHTML = marked.parse(data);
