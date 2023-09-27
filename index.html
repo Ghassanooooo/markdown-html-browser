@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch blog data</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css"
+    />
+
+    <style>
+      h1 {
+        padding-top: 20px;
+      }
+      #root {
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+      pre {
+        position: relative;
+      }
+      pre code {
+        border-radius: 8px;
+
+        white-space: pre-wrap;
+      }
+      .copy-btn {
+        position: absolute;
+        top: 5px;
+        width: 70px;
+        text-align: center;
+        right: 5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: black;
+        font-size: 12px;
+
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+      }
+      img {
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="prose"></div>
+    <script src="./lib/marked.js"></script>
+    <script src="./lib/highlight.js"></script>
+
+    <script src="./main.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  </body>
+</html>
