@@ -3,6 +3,17 @@ export const data = `
 
 ## Import and export modules
 
+### Project implementation
+
+- Live Demo - demo -
+- Project prototype and palnning - plan -
+- Create a folder for the project - setup -
+- Create a file index.html - setup -
+- Create a file main.js - setup -
+- Create a file data.js - setup -
+- Create a folder lib - setup -
+- Coding and use npm libraries - coding -
+
 
 
 \`\`\`html
