@@ -3,9 +3,12 @@ import downloadFile from "./lib/download.js";
 import "./lib/marked.js";
 
 const root = document.querySelector("#root");
+const spinner = document.querySelector(".spinner");
+
 const download = document.querySelector(".download");
 
 window.addEventListener("DOMContentLoaded", () => {
+  spinner.style.display = "none";
   console.log(data);
   download.addEventListener("click", () => {
     downloadFile("doc.md", data);

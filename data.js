@@ -42,7 +42,7 @@ export const data = `
   </head>
   <body>
     <div id="root"></div>
-
+ 
     <script src="./main.js"></script>
   </body>
 </html>
@@ -141,11 +141,14 @@ Make the content more fancy with copy button and more styles + use [highlight.js
 import { data } from "./data.js";
 import downloadFile from "./lib/download.js";
 import "./lib/marked.js";
+const spinner = document.querySelector(".spinner");
 
 const root = document.querySelector("#root");
 const download = document.querySelector(".download");
 
 window.addEventListener("DOMContentLoaded", () => {
+  spinner.style.display = "none";
+
   console.log(data);
   download.addEventListener("click", () => {
     downloadFile("doc.md", data);
@@ -252,6 +255,9 @@ _Make the styles more beautiful with [tailwindcss](https://tailwindcss.com/), [t
     >
       <i class="fa-solid fa-download"></i> Download
     </div>
+    <span
+    class="spinner animate-ping absolute left-1/2 top-1/2 inline-flex h-20 w-20 rounded-full bg-blue-600 opacity-75 z-50"
+  ></span>
     <div id="root" class="prose px-2"></div>
     <script src="./lib/highlight.js"></script>
     <script src="./main.js" type="module"></script>
