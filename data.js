@@ -1,7 +1,10 @@
 export const data = `
+
+![npm](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/800px-Npm-logo.svg.png)
+
 # Npm Review
 
-## Import and export modules
+## Import and export modules and more
 
 ### Project implementation
 
